@@ -29,3 +29,10 @@ npm install --global eas-cli
 npx create-expo-app triumviratemonitor-mobile
 cd triumviratemonitor-mobile
 eas init --id <your-expo-project-id>
+
+'''bash
+npm install react-redux @reduxjs/toolkit redux-persist react-native-sqlite-storage
+npm install react-native-svg react-native-reanimated react-native-gesture-handler react-native-safe-area-context @react-navigation/native @react-navigation/native-stack
+
+'''bash
+npx expo start
