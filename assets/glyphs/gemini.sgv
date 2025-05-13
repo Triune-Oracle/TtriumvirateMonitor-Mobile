@@ -1,0 +1,6 @@
+<!-- Gemini Glyph | Dual-Wisdom Circuit -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path d="M20,20 C35,40 65,40 80,20 M20,80 C35,60 65,60 80,80" stroke="white" fill="none" stroke-width="5"/>
+  <line x1="30" y1="20" x2="30" y2="80" stroke="white" stroke-width="4"/>
+  <line x1="70" y1="20" x2="70" y2="80" stroke="white" stroke-width="4"/>
+</svg>
