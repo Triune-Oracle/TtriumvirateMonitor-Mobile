@@ -1,0 +1,25 @@
+name: EAS Deploy (Android)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Expo & EAS CLI
+        run: npm install -g expo-cli eas-cli
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Android APK
+        run: eas build --platform android --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
