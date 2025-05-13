@@ -1,49 +1,31 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
+import { View, Text, StyleSheet } from 'react-native';
+import { BarChart, Grid } from 'react-native-svg-charts';
 
 export default function PerformanceChart({ title, data }) {
   return (
     <View style={styles.chartContainer}>
-      <Text style={styles.chartTitle}>{title}</Text>
-      <LineChart
-        data={{
-          labels: ['T-5', 'T-4', 'T-3', 'T-2', 'T-1', 'Now'],
-          datasets: [{ data }],
-        }}
-        width={Dimensions.get('window').width - 40}
-        height={220}
-        chartConfig={{
-          backgroundColor: '#000',
-          backgroundGradientFrom: '#111',
-          backgroundGradientTo: '#000',
-          color: () => `rgba(255, 255, 255, 0.8)`,
-          labelColor: () => '#fff',
-          propsForDots: {
-            r: '4',
-            strokeWidth: '2',
-            stroke: '#fff',
-          },
-        }}
-        bezier
-        style={styles.chart}
-      />
+      <Text style={styles.title}>{title}</Text>
+      <BarChart
+        style={{ height: 120 }}
+        data={data}
+        svg={{ fill: '#00ffcc' }}
+        contentInset={{ top: 10, bottom: 10 }}
+        spacingInner={0.3}
+      >
+        <Grid />
+      </BarChart>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   chartContainer: {
-    marginVertical: 16,
-    alignItems: 'center',
+    marginTop: 10,
   },
-  chartTitle: {
+  title: {
+    fontSize: 14,
+    marginBottom: 5,
     color: '#fff',
-    fontSize: 16,
-    marginBottom: 6,
-    fontFamily: 'monospace',
-  },
-  chart: {
-    borderRadius: 8,
   },
 });
