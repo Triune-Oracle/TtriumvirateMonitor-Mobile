@@ -1,4 +1,4 @@
-name: EAS Deploy (Android)
+name: Build and Submit Workflow
 
 on:
   push:
