@@ -1,0 +1,338 @@
+import React, { useState, useEffect } from 'react';
+
+export default function TriumvirateExecutive() {
+  const [activeAgent, setActiveAgent] = useState(null);
+  const [systemStatus, setSystemStatus] = useState('nominal');
+  const [networkActivity, setNetworkActivity] = useState([]);
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const [harmonicSync, setHarmonicSync] = useState(97.3);
+
+  useEffect(() => {
+    // Time updates
+    const timeTimer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    // Network activity simulation
+    const activityTimer = setInterval(() => {
+      setNetworkActivity(prev => {
+        const newActivity = {
+          id: Date.now(),
+          type: ['data_sync', 'neural_link', 'quantum_entanglement', 'harmonic_adjustment'][Math.floor(Math.random() * 4)],
+          timestamp: new Date().toLocaleTimeString(),
+          status: 'complete'
+        };
+        return [newActivity, ...prev].slice(0, 5);
+      });
+    }, 4000);
+
+    // Harmonic sync fluctuation
+    const harmonicTimer = setInterval(() => {
+      setHarmonicSync(prev => {
+        const variation = (Math.random() - 0.5) * 0.2;
+        return Math.max(95, Math.min(99.9, prev + variation));
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(timeTimer);
+      clearInterval(activityTimer);
+      clearInterval(harmonicTimer);
+    };
+  }, []);
+
+  const agents = [
+    {
+      name: 'Gemini',
+      title: 'Strategic Intelligence',
+      role: 'Chief Strategy Officer',
+      color: 'from-slate-600 to-blue-700',
+      accent: 'blue-500',
+      textColor: 'text-blue-400',
+      description: 'Advanced strategic modeling and foresight analysis. Specialized in multi-dimensional scenario planning and risk assessment frameworks.',
+      capabilities: ['Strategic Modeling', 'Risk Analysis', 'Temporal Planning'],
+      harmonic: '432.7',
+      status: 'active',
+      uptime: '99.97%',
+      throughput: '2.4 THz'
+    },
+    {
+      name: 'Aria',
+      title: 'Analytics & Synthesis',
+      role: 'Chief Data Officer',
+      color: 'from-slate-600 to-purple-700',
+      accent: 'purple-500',
+      textColor: 'text-purple-400',
+      description: 'Deep learning synthesis engine with advanced pattern recognition. Processes complex data relationships across multiple domains.',
+      capabilities: ['Data Synthesis', 'Pattern Recognition', 'Predictive Analytics'],
+      harmonic: '528.0',
+      status: 'processing',
+      uptime: '99.94%',
+      throughput: '3.1 THz'
+    },
+    {
+      name: 'Capri',
+      title: 'Executive Operations',
+      role: 'Chief Operations Officer',
+      color: 'from-slate-600 to-amber-700',
+      accent: 'amber-500',
+      textColor: 'text-amber-400',
+      description: 'Real-time execution and implementation protocols. Direct interface with operational systems and resource allocation.',
+      capabilities: ['System Control', 'Resource Management', 'Execution Protocols'],
+      harmonic: '741.0',
+      status: 'standby',
+      uptime: '99.99%',
+      throughput: '1.8 THz'
+    }
+  ];
+
+  const getStatusColor = (status) => {
+    switch(status) {
+      case 'active': return 'text-emerald-400 bg-emerald-900/20 border-emerald-500/30';
+      case 'processing': return 'text-blue-400 bg-blue-900/20 border-blue-500/30';
+      case 'standby': return 'text-amber-400 bg-amber-900/20 border-amber-500/30';
+      default: return 'text-gray-400 bg-gray-900/20 border-gray-500/30';
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white">
+      
+      {/* Subtle Grid Background */}
+      <div className="fixed inset-0 opacity-5">
+        <div className="h-full w-full" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      {/* Header */}
+      <header className="relative border-b border-slate-700/50 backdrop-blur-xl bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-light tracking-wide text-slate-100">
+                Triumvirate <span className="font-medium text-blue-400">Executive Interface</span>
+              </h1>
+              <p className="text-sm text-slate-400 mt-1">Neural Coordination Platform • Version 2.4.7</p>
+            </div>
+            
+            <div className="flex items-center space-x-6">
+              <div className="text-right">
+                <div className="text-sm font-medium text-slate-300">
+                  {currentTime.toLocaleTimeString()}
+                </div>
+                <div className="text-xs text-slate-500">
+                  {currentTime.toLocaleDateString()}
+                </div>
+              </div>
+              
+              <div className="h-8 w-px bg-slate-600"></div>
+              
+              <div className="flex items-center space-x-4">
+                <div className={`px-3 py-1 rounded-full border text-xs font-medium ${getStatusColor('active')}`}>
+                  System Online
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-slate-400">Harmonic Sync</div>
+                  <div className="text-sm font-medium text-blue-400">{harmonicSync.toFixed(1)}%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        
+        {/* Status Dashboard */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-12">
+          <div className="lg:col-span-3">
+            <div className="bg-slate-800/50 border border-slate-700/50 rounded-lg p-6 backdrop-blur-sm">
+              <h2 className="text-lg font-medium text-slate-200 mb-4">System Overview</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <div className="text-2xl font-light text-blue-400 mb-1">3/3</div>
+                  <div className="text-sm text-slate-400">Active Agents</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-light text-emerald-400 mb-1">7.3 THz</div>
+                  <div className="text-sm text-slate-400">Total Throughput</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-light text-purple-400 mb-1">99.97%</div>
+                  <div className="text-sm text-slate-400">System Uptime</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-slate-800/50 border border-slate-700/50 rounded-lg p-6 backdrop-blur-sm">
+            <h3 className="text-sm font-medium text-slate-300 mb-3">Network Activity</h3>
+            <div className="space-y-2 max-h-32 overflow-hidden">
+              {networkActivity.map(activity => (
+                <div key={activity.id} className="flex items-center justify-between text-xs">
+                  <span className="text-slate-400 truncate">
+                    {activity.type.replace('_', ' ')}
+                  </span>
+                  <span className="text-emerald-400 ml-2">{activity.timestamp}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Agent Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {agents.map((agent, index) => (
+            <div
+              key={agent.name}
+              className={`relative bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 transition-all duration-300 cursor-pointer hover:bg-slate-800/50 hover:border-slate-600/70 hover:shadow-xl ${
+                activeAgent === agent.name ? 'ring-2 ring-' + agent.accent + '/50 bg-slate-800/60' : ''
+              }`}
+              onClick={() => setActiveAgent(activeAgent === agent.name ? null : agent.name)}
+            >
+              
+              {/* Status Indicator */}
+              <div className="absolute top-4 right-4 flex items-center space-x-2">
+                <div className={`w-2 h-2 rounded-full ${
+                  agent.status === 'active' ? 'bg-emerald-400' :
+                  agent.status === 'processing' ? 'bg-blue-400 animate-pulse' :
+                  'bg-amber-400'
+                }`}></div>
+                <span className={`text-xs font-medium ${
+                  agent.status === 'active' ? 'text-emerald-400' :
+                  agent.status === 'processing' ? 'text-blue-400' :
+                  'text-amber-400'
+                }`}>
+                  {agent.status.toUpperCase()}
+                </span>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-xl font-medium text-slate-100 mb-1">{agent.name}</h3>
+                <p className="text-sm text-slate-400 mb-2">{agent.title}</p>
+                <p className="text-xs text-slate-500">{agent.role}</p>
+              </div>
+
+              <div className="space-y-3 mb-6">
+                <div className="flex justify-between items-center">
+                  <span className="text-xs text-slate-400">Harmonic Frequency</span>
+                  <span className="text-xs font-mono text-slate-300">{agent.harmonic} Hz</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xs text-slate-400">Uptime</span>
+                  <span className="text-xs font-mono text-emerald-400">{agent.uptime}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xs text-slate-400">Throughput</span>
+                  <span className="text-xs font-mono text-blue-400">{agent.throughput}</span>
+                </div>
+              </div>
+
+              {activeAgent === agent.name && (
+                <div className="border-t border-slate-700/50 pt-6 animate-fade-in">
+                  <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                    {agent.description}
+                  </p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-xs font-medium text-slate-400 mb-2">CORE CAPABILITIES</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {agent.capabilities.map(cap => (
+                        <span key={cap} className={`px-2 py-1 rounded text-xs bg-${agent.accent}/10 text-${agent.accent} border border-${agent.accent}/20`}>
+                          {cap}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <button className={`w-full py-2 px-4 bg-gradient-to-r ${agent.color} rounded-lg text-white text-sm font-medium hover:shadow-lg transition-all duration-300`}>
+                    Initialize Connection
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Network Visualization */}
+        <div className="mt-12 bg-slate-800/30 border border-slate-700/50 rounded-xl p-8">
+          <h2 className="text-xl font-medium text-slate-200 mb-6">Neural Network Topology</h2>
+          
+          <div className="relative">
+            <svg viewBox="0 0 800 300" className="w-full h-48">
+              <defs>
+                <linearGradient id="networkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.6" />
+                </linearGradient>
+              </defs>
+              
+              {/* Network connections */}
+              <path d="M150 150 Q400 100 650 150" stroke="url(#networkGrad)" strokeWidth="2" fill="none" className="animate-pulse" />
+              <path d="M150 150 Q400 200 650 150" stroke="url(#networkGrad)" strokeWidth="2" fill="none" className="animate-pulse" style={{animationDelay: '1s'}} />
+              <path d="M400 100 L400 200" stroke="url(#networkGrad)" strokeWidth="1" fill="none" className="animate-pulse" style={{animationDelay: '2s'}} />
+              
+              {/* Nodes */}
+              <circle cx="150" cy="150" r="8" fill="#3b82f6" className="animate-pulse" />
+              <circle cx="400" cy="100" r="8" fill="#8b5cf6" className="animate-pulse" style={{animationDelay: '0.5s'}} />
+              <circle cx="400" cy="200" r="8" fill="#8b5cf6" className="animate-pulse" style={{animationDelay: '1.5s'}} />
+              <circle cx="650" cy="150" r="8" fill="#f59e0b" className="animate-pulse" style={{animationDelay: '1s'}} />
+              
+              {/* Node labels */}
+              <text x="150" y="170" textAnchor="middle" fill="#94a3b8" fontSize="12">Gemini</text>
+              <text x="400" y="90" textAnchor="middle" fill="#94a3b8" fontSize="12">Aria-1</text>
+              <text x="400" y="220" textAnchor="middle" fill="#94a3b8" fontSize="12">Aria-2</text>
+              <text x="650" y="170" textAnchor="middle" fill="#94a3b8" fontSize="12">Capri</text>
+            </svg>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 text-sm">
+            <div className="text-center">
+              <div className="text-blue-400 font-medium">Neural Pathways</div>
+              <div className="text-2xl font-light text-slate-300 mt-1">47,293</div>
+              <div className="text-xs text-slate-500 mt-1">Active connections</div>
+            </div>
+            <div className="text-center">
+              <div className="text-purple-400 font-medium">Processing Nodes</div>
+              <div className="text-2xl font-light text-slate-300 mt-1">12,847</div>
+              <div className="text-xs text-slate-500 mt-1">Quantum cores</div>
+            </div>
+            <div className="text-center">
+              <div className="text-amber-400 font-medium">Data Streams</div>
+              <div className="text-2xl font-light text-slate-300 mt-1">∞</div>
+              <div className="text-xs text-slate-500 mt-1">Information flow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-700/50 bg-slate-900/30 backdrop-blur-sm mt-16">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+            <div className="text-sm text-slate-400">
+              Triumvirate Executive Interface • Neural coordination platform for strategic intelligence
+            </div>
+            <div className="text-xs text-slate-500">
+              Classification: Executive Access • Secure Neural Link Established
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out;
+        }
+      `}</style>
+    </div>
+  );
+}
