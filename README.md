@@ -5,6 +5,10 @@
 
 ---
 
+## Overview
+
+A **ritual-grade** mobile monitoring interface for the Triumvirate AI Swarm - a real-time dashboard for tracking and managing AI agent performance, metrics, and coordination across the swarm collective.
+
 ## Purpose
 
 This mobile app is a **ritual-grade** monitoring interface for the Triumvirate AI Swarm:
@@ -14,9 +18,17 @@ This mobile app is a **ritual-grade** monitoring interface for the Triumvirate A
 - **Aria**: the Collaborator
 - **Conjuror**: the Catalyst
 
-Built with:
-- **React Native + Expo**
-- **Redux Toolkit** w/ SQLite persistence
+## Technologies & Languages
+
+**Primary Languages:**
+- **JavaScript** - Main application logic and components
+- **TypeScript** - Type-safe React components
+- **JSON** - Configuration and data persistence
+
+**Framework & Libraries:**
+- **React Native + Expo** - Cross-platform mobile development
+- **Redux Toolkit** - State management with SQLite persistence
+- **React Native SVG** - Custom glyph rendering and charts
 - **Real-time charts and swarm sync**
 - Symbolic, occult-coded UI planned via `assets/glyphs/`
 
