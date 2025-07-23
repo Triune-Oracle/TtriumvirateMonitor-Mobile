@@ -4,7 +4,6 @@ A React Native mobile application for monitoring and managing the Triumvirate AI
 
 ## Overview
 
-This mobile app provides a comprehensive monitoring interface for the Triumvirate AI Swarm, featuring real-time performance tracking and agent coordination capabilities.
 
 ### AI Agents Monitored
 - **Oracle**: the Vision
@@ -13,7 +12,6 @@ This mobile app provides a comprehensive monitoring interface for the Triumvirat
 - **Aria**: the Collaborator
 - **Conjuror**: the Catalyst
 
-## Technologies
 
 **Primary Languages:** JavaScript, JSX  
 **Framework:** React Native with Expo  
