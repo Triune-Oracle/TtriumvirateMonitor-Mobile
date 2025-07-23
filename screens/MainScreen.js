@@ -1,5 +1,5 @@
-import AgentMetricsBoard from './AgentMetricsBoard';
+import AgentMetricsBoard from '../AgentMetricsBoard';
 
-export default function App() {
+export default function MainScreen() {
   return <AgentMetricsBoard />;
 }
