@@ -3,12 +3,15 @@
     "name": "triumviratemonitor-mobile",
     "slug": "triumviratemonitor-mobile",
     "version": "1.0.0",
-    "entryPoint": "./node_modules/expo/AppEntry.js",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "triumviratemonitormobile",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -18,29 +21,12 @@
         "backgroundColor": "#ffffff"
       }
     },
-    "edgeToEdgeEnabled": true,
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    },
     "extra": {
-      "router": {},
       "eas": {
         "projectId": "64478dbc-ab9a-446c-ade6-a36eb62742c0"
       }

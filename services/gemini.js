@@ -3,7 +3,7 @@
  * Handles agent communication and poetic mode integration
  */
 
-import { scrollTracker } from './scrollTracker';
+import { scrollTracker } from './scrollTracker.js';
 
 export class GeminiService {
   constructor() {
