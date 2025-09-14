@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scs-python-project"
+version = "1.0.0"
+description = "Python project with Layered Authorship Framework"
+authors = [
+    {name = "Sean Christopher Southwick", email = "contact@example.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+add-framework = "scripts.add_framework_recursive:main"
+
+[project.urls]
+Homepage = "https://github.com/username/project"
+Repository = "https://github.com/username/project"
+
+[tool.authorship]
+framework = "Layered Authorship Framework"
+primary_author = "Sean Christopher Southwick"
+creation_date = "2025-08-26"
+contribution_level = "Level 2 - Assisted Development"

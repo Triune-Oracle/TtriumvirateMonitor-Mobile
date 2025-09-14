@@ -1,0 +1,37 @@
+{
+  "// Layered Authorship Framework - VS Code Settings": "",
+  "// Primary Author: Sean Christopher Southwick": "",
+  "// Computational Assistance: Non-human automated systems provided VS Code configuration": "",
+
+  "files.associations": {
+    "AUTHORSHIP_FRAMEWORK.md": "markdown",
+    "*.authorship.yml": "yaml"
+  },
+
+  "editor.rulers": [80, 120],
+
+  "files.templates": {
+    "javascript": {
+      "prefix": "/*\n * Layered Authorship Framework Attribution\n *\n * Primary Author: Sean Christopher Southwick\n * Computational Assistance: Non-human automated systems provided ${1:assistance_type}\n * Human Collaborators: ${2:None}\n * Creation Date: ${CURRENT_DATE}\n * Last Modified: ${CURRENT_DATE}\n * Artifact ID: ${3:SCS-${CURRENT_SECONDS_UNIX}-${RANDOM}}\n *\n * Contribution Level: ${4:Level 2 - Assisted Development}\n */\n\n"
+    },
+    "python": {
+      "prefix": "\"\"\"\nLayered Authorship Framework Attribution\n\nPrimary Author: Sean Christopher Southwick\nComputational Assistance: Non-human automated systems provided ${1:assistance_type}\nHuman Collaborators: ${2:None}\nCreation Date: ${CURRENT_DATE}\nLast Modified: ${CURRENT_DATE}\nArtifact ID: ${3:SCS-${CURRENT_SECONDS_UNIX}-${RANDOM}}\n\nContribution Level: ${4:Level 2 - Assisted Development}\n\"\"\"\n\n"
+    }
+  },
+
+  "emmet.includeLanguages": {
+    "authorship": "yaml"
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/authorship-framework-report-*.json": true
+  },
+
+  "files.watcherExclude": {
+    "**/authorship-framework-report-*.json": true
+  }
+}

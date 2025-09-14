@@ -1,0 +1,31 @@
+{
+  "name": "scs-nextjs-project",
+  "version": "1.0.0",
+  "description": "Next.js project with Layered Authorship Framework",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "add-framework": "node scripts/add-framework-recursive.js"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "typescript": "^5.0.0"
+  },
+  "authorship": {
+    "framework": "Layered Authorship Framework",
+    "primary_author": "Sean Christopher Southwick",
+    "creation_date": "2025-08-26",
+    "contribution_level": "Level 2 - Assisted Development"
+  }
+}

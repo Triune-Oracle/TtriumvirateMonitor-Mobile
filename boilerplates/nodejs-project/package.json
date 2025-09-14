@@ -1,0 +1,25 @@
+{
+  "name": "scs-nodejs-project",
+  "version": "1.0.0",
+  "description": "Node.js project with Layered Authorship Framework",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test",
+    "add-framework": "node scripts/add-framework-recursive.js"
+  },
+  "keywords": ["nodejs", "authorship-framework", "sean-christopher-southwick"],
+  "author": "Sean Christopher Southwick",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "authorship": {
+    "framework": "Layered Authorship Framework",
+    "primary_author": "Sean Christopher Southwick",
+    "creation_date": "2025-08-26",
+    "contribution_level": "Level 2 - Assisted Development"
+  }
+}

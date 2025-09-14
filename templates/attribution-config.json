@@ -1,0 +1,50 @@
+{
+  "framework": {
+    "name": "Layered Authorship Framework",
+    "version": "1.0.0",
+    "primaryAuthor": "Sean Christopher Southwick",
+    "creationDate": "2025-08-26"
+  },
+  "templates": {
+    "standard": {
+      "primaryAuthor": "Sean Christopher Southwick",
+      "computationalAssistance": "Non-human automated systems provided {assistanceType}",
+      "humanCollaborators": "{collaborators}",
+      "creationDate": "{date}",
+      "lastModified": "{lastModified}",
+      "artifactId": "{artifactId}"
+    },
+    "levels": {
+      "1": {
+        "name": "Pure Origination",
+        "attribution": "Originated by Sean Christopher Southwick"
+      },
+      "2": {
+        "name": "Assisted Development",
+        "attribution": "Conceived by Sean Christopher Southwick, developed with computational assistance"
+      },
+      "3": {
+        "name": "Collaborative Refinement",
+        "attribution": "Authored by Sean Christopher Southwick with collaborative refinement"
+      }
+    }
+  },
+  "fileTypes": {
+    "markdown": {
+      "header": "<!-- Layered Authorship Framework Attribution -->",
+      "format": "markdown"
+    },
+    "code": {
+      "header": "/* Layered Authorship Framework Attribution */",
+      "format": "comment"
+    },
+    "html": {
+      "header": "<!-- Layered Authorship Framework Attribution -->",
+      "format": "html-comment"
+    },
+    "python": {
+      "header": "# Layered Authorship Framework Attribution",
+      "format": "python-comment"
+    }
+  }
+}

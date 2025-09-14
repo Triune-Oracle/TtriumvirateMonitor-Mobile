@@ -1,0 +1,124 @@
+# Layered Authorship Framework - GitHub Actions Workflow
+# Primary Author: Sean Christopher Southwick
+# Computational Assistance: Non-human automated systems provided GitHub Actions configuration
+
+name: Layered Authorship Framework Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  authorship-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Check for Framework Scripts
+      id: check-scripts
+      run: |
+        if [ -f "scripts/add-framework-recursive.js" ]; then
+          echo "script-type=node" >> $GITHUB_OUTPUT
+        elif [ -f "scripts/add_framework_recursive.py" ]; then
+          echo "script-type=python" >> $GITHUB_OUTPUT
+        else
+          echo "script-type=none" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Validate Authorship Attribution
+      run: |
+        echo "🔍 Checking Layered Authorship Framework compliance..."
+        
+        # Find files that should have attribution
+        files_to_check=$(find . -type f \( \
+          -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -o \
+          -name "*.py" -o -name "*.html" -o -name "*.md" -o \
+          -name "*.yml" -o -name "*.yaml" \
+        \) ! -path "./node_modules/*" ! -path "./.git/*" ! -path "./dist/*" ! -path "./build/*")
+        
+        missing_attribution=()
+        attribution_markers=("Layered Authorship Framework" "Primary Author: Sean Christopher Southwick")
+        
+        for file in $files_to_check; do
+          has_attribution=false
+          for marker in "${attribution_markers[@]}"; do
+            if grep -q "$marker" "$file" 2>/dev/null; then
+              has_attribution=true
+              break
+            fi
+          done
+          
+          if [ "$has_attribution" = "false" ]; then
+            missing_attribution+=("$file")
+          fi
+        done
+        
+        if [ ${#missing_attribution[@]} -gt 0 ]; then
+          echo "❌ Files missing Layered Authorship Framework attribution:"
+          printf '%s\n' "${missing_attribution[@]}"
+          echo ""
+          echo "Please add attribution using the framework scripts or manually."
+          exit 1
+        else
+          echo "✅ All files have proper Layered Authorship Framework attribution"
+        fi
+        
+    - name: Generate Attribution Report
+      if: always()
+      run: |
+        echo "📊 Generating attribution report..."
+        
+        # Count files by type and attribution status
+        total_files=0
+        attributed_files=0
+        
+        files_to_check=$(find . -type f \( \
+          -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -o \
+          -name "*.py" -o -name "*.html" -o -name "*.md" -o \
+          -name "*.yml" -o -name "*.yaml" \
+        \) ! -path "./node_modules/*" ! -path "./.git/*" ! -path "./dist/*" ! -path "./build/*")
+        
+        for file in $files_to_check; do
+          total_files=$((total_files + 1))
+          if grep -q "Primary Author: Sean Christopher Southwick" "$file" 2>/dev/null; then
+            attributed_files=$((attributed_files + 1))
+          fi
+        done
+        
+        echo "📋 Attribution Report:"
+        echo "  Total eligible files: $total_files"
+        echo "  Files with attribution: $attributed_files"
+        echo "  Coverage: $(( attributed_files * 100 / total_files ))%"
+        
+        # Save report as artifact
+        cat > attribution-report.txt << EOF
+Layered Authorship Framework - Attribution Report
+Generated: $(date)
+Repository: ${{ github.repository }}
+Commit: ${{ github.sha }}
+
+Total eligible files: $total_files
+Files with attribution: $attributed_files
+Coverage: $(( attributed_files * 100 / total_files ))%
+EOF
+        
+    - name: Upload Attribution Report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: attribution-report
+        path: attribution-report.txt

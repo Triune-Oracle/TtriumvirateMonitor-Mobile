@@ -1,45 +1,27 @@
-# TriumvirateMonitor-Mobile .gitignore
-# SANGUIS Standard: Protect sacred cache, logs, and node entrails
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Node
-node_modules/
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# Expo / React Native
-.expo/
-.expo-shared/
-*.expo
-*.DS_Store
+# env files
+.env*
 
-# Android/iOS builds
-android/
-ios/
-*.apk
-*.aab
+# vercel
+.vercel
 
-# SQLite ritual caches
-*.db
-*.sqlite
-*.db-shm
-*.db-wal
-
-# Env & credentials
-.env
-.env.*
-*.keystore
-*.pem
-
-# IDEs
-.vscode/
-.idea/
-
-# Git
-.git/
-
-# Ritual Artifacts
-__generated__/
-dist/
-build/
-coverage/
+# typescript
+*.tsbuildinfo
+next-env.d.ts

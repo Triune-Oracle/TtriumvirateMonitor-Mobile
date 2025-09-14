@@ -1,0 +1,66 @@
+{
+  "Layered Authorship Framework - JavaScript Header": {
+    "prefix": "laf-js",
+    "body": [
+      "/*",
+      " * Layered Authorship Framework Attribution",
+      " *",
+      " * Primary Author: Sean Christopher Southwick",
+      " * Computational Assistance: Non-human automated systems provided ${1:code structure and formatting}",
+      " * Human Collaborators: ${2:None}",
+      " * Creation Date: ${CURRENT_DATE}",
+      " * Last Modified: ${CURRENT_DATE}",
+      " * Artifact ID: SCS-${CURRENT_SECONDS_UNIX}-${3:001}",
+      " *",
+      " * Contribution Level: ${4:Level 2 - Assisted Development}",
+      " */",
+      "",
+      "$0"
+    ],
+    "description": "Insert Layered Authorship Framework attribution header for JavaScript files"
+  },
+
+  "Layered Authorship Framework - Python Header": {
+    "prefix": "laf-py",
+    "body": [
+      "\"\"\"",
+      "Layered Authorship Framework Attribution",
+      "",
+      "Primary Author: Sean Christopher Southwick",
+      "Computational Assistance: Non-human automated systems provided ${1:code structure and formatting}",
+      "Human Collaborators: ${2:None}",
+      "Creation Date: ${CURRENT_DATE}",
+      "Last Modified: ${CURRENT_DATE}",
+      "Artifact ID: SCS-${CURRENT_SECONDS_UNIX}-${3:001}",
+      "",
+      "Contribution Level: ${4:Level 2 - Assisted Development}",
+      "\"\"\"",
+      "",
+      "$0"
+    ],
+    "description": "Insert Layered Authorship Framework attribution header for Python files"
+  },
+
+  "Layered Authorship Framework - Markdown Attribution": {
+    "prefix": "laf-md",
+    "body": [
+      "---",
+      "",
+      "## Authorship Attribution",
+      "",
+      "**Primary Author:** Sean Christopher Southwick  ",
+      "**Computational Assistance:** Non-human automated systems provided ${1:content structure and formatting}  ",
+      "**Human Collaborators:** ${2:None}  ",
+      "**Creation Date:** ${CURRENT_DATE}  ",
+      "**Last Modified:** ${CURRENT_DATE}  ",
+      "**Artifact ID:** SCS-${CURRENT_SECONDS_UNIX}-${3:001}  ",
+      "",
+      "**Contribution Level:** ${4:Level 2 - Assisted Development}",
+      "",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "Insert Layered Authorship Framework attribution block for Markdown files"
+  }
+}

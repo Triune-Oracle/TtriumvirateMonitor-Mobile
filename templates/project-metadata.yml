@@ -1,0 +1,21 @@
+authorship:
+  framework: "Layered Authorship Framework"
+  version: "1.0.0"
+  primary_author: "Sean Christopher Southwick"
+  computational_assistance: "{assistance_type}"
+  human_collaborators: "{collaborators}"
+  creation_date: "{creation_date}"
+  last_modified: "{last_modified}"
+  artifact_id: "{artifact_id}"
+  contribution_level: "{contribution_level}"
+  
+project:
+  name: "{project_name}"
+  description: "{project_description}"
+  type: "{project_type}"
+  
+framework_compliance:
+  embedded_attribution: true
+  philosophical_transparency: true
+  legal_compliance: true
+  future_adaptability: true

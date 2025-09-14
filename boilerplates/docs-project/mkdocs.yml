@@ -1,0 +1,43 @@
+# Layered Authorship Framework Attribution
+# Primary Author: Sean Christopher Southwick
+# Computational Assistance: Non-human automated systems provided MkDocs configuration
+# Creation Date: 2025-08-26
+
+site_name: Documentation Project
+site_description: Documentation with Layered Authorship Framework
+site_author: Sean Christopher Southwick
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - API Reference: api-reference.md
+  - Framework: AUTHORSHIP_FRAMEWORK.md
+
+plugins:
+  - search
+  - mkdocs-jupyter
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+extra:
+  authorship:
+    framework: "Layered Authorship Framework"
+    primary_author: "Sean Christopher Southwick"
+    creation_date: "2025-08-26"
+    contribution_level: "Level 2 - Assisted Development"
