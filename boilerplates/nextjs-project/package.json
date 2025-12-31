@@ -10,7 +10,7 @@
     "add-framework": "node scripts/add-framework-recursive.js"
   },
   "dependencies": {
-    "next": "^14.0.0",
+    "next": "14.2.35",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
